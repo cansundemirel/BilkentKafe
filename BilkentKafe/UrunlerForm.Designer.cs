@@ -71,6 +71,7 @@
             this.btnUrunEkle.TabIndex = 3;
             this.btnUrunEkle.Text = "EKLE";
             this.btnUrunEkle.UseVisualStyleBackColor = true;
+            this.btnUrunEkle.Click += new System.EventHandler(this.btnUrunEkle_Click);
             // 
             // dgvUrunler
             // 
@@ -104,7 +105,7 @@
             this.Controls.Add(this.txtUrunAd);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UrunlerForm";
             this.Text = "Ürünler";
             ((System.ComponentModel.ISupportInitialize)(this.nudBirimFiyat)).EndInit();

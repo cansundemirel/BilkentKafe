@@ -76,7 +76,7 @@ namespace BilkentKafe
 
             // ve ilgili masanın sipariş formunu aç
             SiparisForm siparisForm = new SiparisForm(db, siparis);
-            siparisForm.ShowDialog();
+            siparisForm.ShowDialog(this);
 
             if (siparis.Durum != SiparisDurum.Aktif)
             {
@@ -107,6 +107,31 @@ namespace BilkentKafe
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             VerileriYaz();
+        }
+
+        private void btnGecmisSiparisler_Click(object sender, EventArgs e)
+        {
+            var frm = new GecmisSiparislerForm(db);
+            frm.ShowDialog();
+        }
+
+        private void btnUrunler_Click(object sender, EventArgs e)
+        {
+
+            var frm = new UrunlerForm(db);
+            frm.ShowDialog();
+        }
+
+        public void MasaTasi (int kaynak, int hedef)
+        {
+            foreach (ListViewItem masa in lvwMasalar.Items)
+            {
+                if ((int) masa.Tag == kaynak)
+                    masa.ImageKey = "boş";
+
+                if ((int)masa.Tag == kaynak)
+                    masa.ImageKey = "dolu";
+            }
         }
     }
 }
